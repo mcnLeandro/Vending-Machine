@@ -101,6 +101,10 @@ class VendingMachine{
     
     
     setBtnsEvent(){
+        console.log("---------------------------------------------")
+        console.log("start setting" + this.vmID + "\'s　button event")
+        console.log("---------------------------------------------")
+
         const vm = document.getElementById(this.vmID);
 
         let nameInput   = vm.querySelector("#nameInput");
@@ -161,17 +165,20 @@ class VendingMachine{
                 idInput.value += btnText;
             })
         }
+        console.log("set Btns")
 
         delBtn.addEventListener("click",function(){
             toggleIntaractMode();
             idInput.value = idInput.value.substring(0,idInput.value.length-1);
         });
+        console.log("set delBTn")
         
         
         ACBtn.addEventListener("click",function(){
             toggleIntaractMode();
             idInput.value = "";
         });
+        console.log("set ACBTn")
 
         let productTable = this.productTable;
 
@@ -188,6 +195,11 @@ class VendingMachine{
                 ///pushで何かしらをする
             }
         });
+        console.log("set intaractBTn")
+        console.log("---------------------------------------------")
+        console.log("done")
+        console.log("---------------------------------------------")
+
     }
 
     setDisplayList(){
