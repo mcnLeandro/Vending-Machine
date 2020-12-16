@@ -55,7 +55,7 @@ class VendingMachine{
                         <div id ="innerLeftPart" class=" d-flex flex-column py-3">
                                 <div id="slideShow" class="col-12 d-flex flex-nowrap overflow-hiddens">
                                     <div id="main" class="full-width" >
-                                        <img src="https://cdn.pixabay.com/photo/2017/08/06/12/40/soda-2592159_1280.jpg" class="rounded full-width" style="height: 100%;">
+                                        <img src="https://cdn.pixabay.com/photo/2017/08/06/12/40/soda-2592159_1280.jpg" class="rounded" style="object-fit: cover; width:100%">
                                     </div>
                                     <div id="extra" class="full-width"></div>
                                 </div>
