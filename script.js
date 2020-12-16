@@ -32,6 +32,7 @@ class VendingMachine{
     constructor(target,vmID,table,displayList,color){
         this.target = target;
         this.vmID = vmID;
+        this.vm = document.getElementById(this.vmID);
         this.productTable = new ProductTable(table);
         this.displayList = displayList;
         this.color = color;
@@ -105,21 +106,21 @@ class VendingMachine{
         console.log("start setting" + this.vmID + "\'s　button event")
         console.log("---------------------------------------------")
 
-        const vm = document.getElementById(this.vmID);
+        
 
-        let nameInput   = vm.querySelector("#nameInput");
-        let priceInput  = vm.querySelector("#priceInput");
-        let idInput     = vm.querySelector("#idInput");
+        let nameInput   = this.vm.querySelector("#nameInput");
+        let priceInput  = this.vm.querySelector("#priceInput");
+        let idInput     = this.vm.querySelector("#idInput");
 
-        const numBtns   = vm.querySelectorAll("#btn");
-        const delBtn    = vm.querySelector("#DEL");
-        const ACBtn     = vm.querySelector("#AC");
-        let intaractBtn = vm.querySelector("#intaract");
+        const numBtns   = this.vm.querySelectorAll("#btn");
+        const delBtn    = this.vm.querySelector("#DEL");
+        const ACBtn     = this.vm.querySelector("#AC");
+        let intaractBtn = this.vm.querySelector("#intaract");
 
 
-        let sliderShow  = vm.querySelector("#slideShow")
-        let main        = vm.querySelector("#main")
-        let extra       = vm.querySelector("#extra")
+        let sliderShow  = this.vm.querySelector("#slideShow")
+        let main        = this.vm.querySelector("#main")
+        let extra       = this.vm.querySelector("#extra")
 
         
         function slideJump(productTable) {
