@@ -35,13 +35,17 @@ class VendingMachine{
         this.productTable = new ProductTable(table);
         this.displayList = displayList;
         this.color = color;
-    }
 
-    setVendingMachine(){
         this.setHTML();
-        this.setBtnsEvent();
         this.setDisplayList();
     }
+
+    // setVendingMachine(){
+    //     this.setHTML();
+    //     this.setBtnsEvent();
+    //     this.setDisplayList();
+    // }
+
 
     setHTML(){
         this.target.innerHTML +=
@@ -79,7 +83,7 @@ class VendingMachine{
                                 <div class="row justify-content-around">
                                     <div class="col-4 m-0 p-1"><button id="btn" class="btn btn-primary w-100" style="font-size: 3vw;">0</button></div>
                                     <div class="col-4 m-0 p-1"><button id="DEL" class="btn btn-primary w-100" style="font-size: 3vw;">DEL</button></div>
-                                    <div class="col-4 m-0 p-1"><button id="AC" class="btn btn-primary w-100" style="font-size: 3vw;">AC</button></div>
+                                    <div class="col-4 m-0 p-1"><button id="AC"  class="btn btn-primary w-100" style="font-size: 3vw;">AC</button></div>
                                     <div class="col-4 m-0 p-1"><button id="btn" class="btn btn-primary w-100" style="font-size: 3vw;">1</button></div>
                                     <div class="col-4 m-0 p-1"><button id="btn" class="btn btn-primary w-100" style="font-size: 3vw;">2</button></div>
                                     <div class="col-4 m-0 p-1"><button id="btn" class="btn btn-primary w-100" style="font-size: 3vw;">3</button></div>
@@ -89,7 +93,7 @@ class VendingMachine{
                                     <div class="col-4 m-0 p-1"><button id="btn" class="btn btn-primary w-100" style="font-size: 3vw;">7</button></div>
                                     <div class="col-4 m-0 p-1"><button id="btn" class="btn btn-primary w-100" style="font-size: 3vw;">8</button></div>
                                     <div class="col-4 m-0 p-1"><button id="btn" class="btn btn-primary w-100" style="font-size: 3vw;">9</button></div>
-                                    <div class="col m-0 p-1"><button id="intaract" class="btn btn-primary w-100" style="font-size: 3vw;">Show</button></div>
+                                    <div class="col   m-0 p-1"><button id="intaract" class="btn btn-primary w-100" style="font-size: 3vw;">Show</button></div>
                                 </div>
                             </div>
                         </div>
@@ -101,9 +105,6 @@ class VendingMachine{
     
     
     setBtnsEvent(){
-        console.log("---------------------------------------------")
-        console.log("start setting" + this.vmID + "\'s　button event")
-        console.log("---------------------------------------------")
 
         const vm = document.getElementById(this.vmID);
 
@@ -165,20 +166,17 @@ class VendingMachine{
                 idInput.value += btnText;
             })
         }
-        console.log("set Btns")
 
         delBtn.addEventListener("click",function(){
             toggleIntaractMode();
             idInput.value = idInput.value.substring(0,idInput.value.length-1);
         });
-        console.log("set delBTn")
         
         
         ACBtn.addEventListener("click",function(){
             toggleIntaractMode();
             idInput.value = "";
         });
-        console.log("set ACBTn")
 
         let productTable = this.productTable;
 
@@ -195,11 +193,6 @@ class VendingMachine{
                 ///pushで何かしらをする
             }
         });
-        console.log("set intaractBTn")
-        console.log("---------------------------------------------")
-        console.log("done")
-        console.log("---------------------------------------------")
-
     }
 
     setDisplayList(){
@@ -277,16 +270,16 @@ let clothes = {
 }
 
 
-
 let target = document.getElementById("target")
 
 //              VendingMachine(target,vmID,table,DisplayList?,color)
 let vm1 = new VendingMachine(target,"VM-MK-I",art,true,"#343b3f");
-let vm2 = new VendingMachine(target,"blueMachine",art,false,"#004783");
+let vm2 = new VendingMachine(target,"blueMachine",clothes,true,"#004783");
 let vm3 = new VendingMachine(target,"leandro",food,true,"#894783");
-vm1.setVendingMachine();
-vm2.setVendingMachine();
-vm3.setVendingMachine();
+
+vm1.setBtnsEvent();
+vm2.setBtnsEvent();
+vm3.setBtnsEvent();
 
 
 
